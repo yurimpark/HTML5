@@ -9,8 +9,15 @@
   box-sizing: border-box; /*★★width(padding+border)+margin*/
 }
 
+/* 링크 스타일 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* 본문 스타일 */
 body {
+  color: #181818;
   background: #ccc;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
@@ -46,7 +53,23 @@ body {
 
 /* 텍스트 링크 모음 */
 .member {
-  background-color: aqua;
+  /* background-color: blue; */
+  text-align: right;
+  padding: 4px;
+}
+
+.member li {
+  display: inline-block;
+}
+
+.member a {
+  background-color: cadetblue;
+  padding: 6px 10px; /*패딩을 줌으로써 클릭 영역을 넓혀서 접근성을 높일 수 있다.*/
+  display: inherit;
+}
+
+.divider {
+  margin-right: 4px;
 }
 
 /* 비주얼 */
