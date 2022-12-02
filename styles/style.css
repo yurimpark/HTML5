@@ -42,9 +42,13 @@ body {
 /* 메인 */
 .main {
   background: lightgreen;
-  height: 50vh;
+  min-height: 450px;
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap; /* flex-direction: row; + flex-wrap: nowrap; */
+  /* justify-content: space-evenly;   익스플로러에서는 안됨 */
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
   /* overflow: hidden; */
 }
 
