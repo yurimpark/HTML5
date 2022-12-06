@@ -46,7 +46,6 @@ body {
 .header {
   background: #fff;
   padding: 0 30px;
-  height: 15vh;
   border-radius: 0 0 15px 15px; /*시계방향으로 설정. 오른쪽하단 왼쪽하단*/
   position: relative;
 }
