@@ -53,7 +53,7 @@ body {
 
 /* 텍스트 링크 모음 */
 .member {
-  /* background-color: blue; */
+  background-color: aqua;
   text-align: right;
   padding: 4px;
 }
@@ -63,9 +63,15 @@ body {
 }
 
 .member a {
-  background-color: cadetblue;
+  background-color: coral;
   padding: 6px 10px; /*패딩을 줌으로써 클릭 영역을 넓혀서 접근성을 높일 수 있다.*/
   display: inherit;
+  text-transform: uppercase;
+}
+
+/* 마지막 li요소에 포함된 a 요소를 선택하여 오른쪽 padding값을 0으로 재정의 하는 방법 */
+.member li:last-child a {
+  padding-right: 0;
 }
 
 .divider {
