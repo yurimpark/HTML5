@@ -2,6 +2,13 @@
 @import url(./reset.css);
 /* 주석은 ctrl+ / */
 
+/* 숨김 콘텐츠 */
+.a11y-hidden {
+  background-color: yellow;
+  position: absolute;
+  top: -9999em;
+}
+
 /* 기본 스타일 */
 *,
 *::before,
