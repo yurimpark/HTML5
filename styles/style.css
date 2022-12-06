@@ -117,13 +117,27 @@ body {
       #ef9126 100%
     );
   border-radius: 0 0 5px 5px;
-  display: flow-root;
+  /* display: flow-root; */
   padding-left: 230px;
+  height: 47px;
 }
 
 .menu-item {
-  background-color: aqua;
   float: left;
+  border-left: 2px solid #fff;
+}
+
+.menu-button {
+  border: 0;
+  background-color: transparent;
+  /* padding을 버튼에 준 이유는 글자가 아닌 영역도 누를 수 있게 하려고 */
+  padding: 0 23px;
+  line-height: 45px;
+  /* 상속으로 인한 문제를 방지하기 위해 font에 관한 속성을 부모에 넣지 않음 */
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
 }
 
 .sub-menu {
