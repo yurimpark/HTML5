@@ -6,6 +6,9 @@
 .a11y-hidden {
   background-color: red;
   position: absolute;
+  /* 접근 가능하게 숨기기 위해 .a11y-hidden에 w1 h1을 주면 안에 담긴 text가 오버플로우된다.
+  그래서 ov:h, m:-1을 주면 오버플로우 된 것들이 히든 되고, 상자는 늘어나게 된다.
+  거기에 clip-path를 0 0, 0 0, 0 0으로 주면 화면에는 보이지 않고 접근이 가능해진다. */
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -51,7 +54,9 @@ body {
 .slogan,
 .footer-inner {
   width: 940px;
-  margin: 0 auto; /*★★상자가 움직인게 아니라 투명하게 커진 것 이라고 이해하기! auto를 주면 가운데 정렬된 것 처럼 보이는데 정렬된 것이 아니라 영역을 전체로 잡아서 양 옆으로 마진이 넓어진 것.*/
+  /*★★상자가 움직인게 아니라 투명하게 커진 것 이라고 이해하기!
+  auto를 주면 가운데 정렬된 것 처럼 보이는데 정렬된 것이 아니라 영역을 전체로 잡아서 양 옆으로 마진이 넓어진 것.*/
+  margin: 0 auto;
 }
 
 /* 헤더 */
@@ -86,7 +91,8 @@ body {
 }
 
 .member a {
-  padding: 6px 10px; /*패딩을 줌으로써 클릭 영역을 넓혀서 접근성을 높일 수 있다.*/
+  /*패딩을 줌으로써 클릭 영역을 넓혀서 접근성을 높일 수 있다.*/
+  padding: 6px 10px;
   display: inherit;
   text-transform: uppercase;
 }
@@ -122,16 +128,22 @@ body {
   height: 47px;
 }
 
-.menu-item {
+.menu li {
   float: left;
+}
+
+.menu-item {
+  /* float: left; */
   border-left: 2px solid #fff;
 }
 
+/* 구체성 10점 */
 .menu-button {
   border: 0;
   background-color: transparent;
   /* padding을 버튼에 준 이유는 글자가 아닌 영역도 누를 수 있게 하려고 */
   padding: 0 23px;
+  /* line-height덕분에 .is-active .menu-button::after의 선이 박스 밑에 딱 붙는 것처럼 보임  */
   line-height: 45px;
   /* 상속으로 인한 문제를 방지하기 위해 font에 관한 속성을 부모에 넣지 않음 */
   font-size: 15px;
@@ -140,10 +152,26 @@ body {
   text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
 }
 
+/* 구체성 20점 */
+.is-active .menu-button {
+  color: #ff0;
+}
+
+.is-active .menu-button::after {
+  content: "";
+  display: block;
+  background-color: lightgreen;
+  border-top: 2px solid #212121;
+}
+
 .sub-menu {
   position: absolute;
   background-color: pink;
   display: none;
+}
+
+.is-active .sub-menu {
+  display: block;
 }
 
 /* 비주얼 */
