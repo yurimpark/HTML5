@@ -73,7 +73,7 @@ body {
   position: absolute;
   top: 45px;
   left: 60px;
-  z-index: 0;
+  z-index: 9999;
 }
 
 /* 텍스트 링크 모음 */
@@ -250,9 +250,11 @@ body {
 .visual-text {
   font-family: Georgia, "Times New Roman", Times, serif;
   animation-name: moveEffect;
-  animation-duration: 2000ms;
+  animation-duration: 3000ms;
+  animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  display: inline-block;
+  /* display: inline-block; */
+  position: absolute;
 }
 
 /* 메인 */
