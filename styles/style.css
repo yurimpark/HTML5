@@ -404,9 +404,37 @@ body {
   background-color: #fff;
   border-radius: 0 0 5px 5px;
   padding: 4px 10px;
-  display: flex;
+  /* flex로 하는 법 */
+  /* display: flex;
   flex-flow: nowrap;
-  justify-content: space-between;
+  justify-content: space-between; */
+  /* display: flow-root; */
+  font-size: 0;
+  /* font-size: 0;을 주고싶지 않다면 html에서 li태그 마크업 수정하면 됨 */
+}
+
+/* float으로 하는 법 */
+/* .sign li:first-child {
+  float: left;
+}
+.sign li:last-child {
+  float: right;
+} */
+
+/* inline-block으로 하는 법 */
+.sign li {
+  display: inline-block;
+  /* border: 1px solid blue; */
+  font-size: 14px;
+}
+
+.sign li:first-child {
+  width: 35%;
+}
+
+.sign li:last-child {
+  width: 65%;
+  text-align: right;
 }
 
 .sign a {
