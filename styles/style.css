@@ -5,7 +5,8 @@
 /* 주석은 ctrl+ / */
 
 /* 숨김 콘텐츠 */
-.a11y-hidden {
+.a11y-hidden,
+legend {
   position: absolute;
   /* 접근 가능하게 숨기기 위해 .a11y-hidden에 w1 h1을 주면 안에 담긴 text가 오버플로우된다.
   그래서 ov:h, m:-1을 주면 오버플로우 된 것들이 히든 되고, 상자는 늘어나게 된다.
@@ -307,10 +308,11 @@ body {
 
 /* 메인 */
 .main {
-  background: lightgreen;
-  height: 50vh;
+  background: #fff;
+  min-height: 450px;
   display: flow-root;
-  padding: 0 15px;
+  padding: 30px 15px;
+  border-radius: 15px 15px 0 0;
   /* overflow: hidden; */
 }
 
@@ -326,7 +328,7 @@ body {
 }
 
 .group1 {
-  background-color: violet;
+  /* background-color: violet; */
   width: 250px;
 }
 .group2 {
@@ -336,6 +338,64 @@ body {
 .group3 {
   background-color: gold;
   width: 190px;
+}
+
+/* 로그인 */
+.login {
+  box-shadow: 5px 5px 0 0 #ccc;
+  background: orange radial-gradient(circle at right top, orange, orangered);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.login-title {
+  color: #ff0;
+  font-size: 15px;
+  font-weight: 700;
+  text-indent: 10px;
+}
+
+.login-form {
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+
+.login-form fieldset {
+  position: relative;
+}
+
+.user-email {
+  background-color: skyblue;
+}
+
+.user-pw {
+  background-color: lime;
+}
+
+.login-form label {
+  display: inline-block;
+  background-color: salmon;
+  width: 4em;
+}
+
+.login-form input {
+  width: 90px;
+  height: 24px;
+  border: 1px solid #aaa;
+}
+
+.login-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sign {
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 0 10px 10px 10px;
 }
 
 /* 슬로건 */
