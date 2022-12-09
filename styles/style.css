@@ -392,9 +392,12 @@ body {
   top: 0;
   right: 0;
   height: 53px;
+  background-color: orangered;
+  color: #fff;
   border: 0;
   padding: 0 8px;
   border-radius: 5px;
+  font-size: 13px;
 }
 
 .sign {
