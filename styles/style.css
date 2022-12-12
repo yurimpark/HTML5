@@ -546,17 +546,15 @@ body {
   background: #ccc linear-gradient(to bottom, #ccc, #eee);
   border: 1px solid #aaa;
   border-radius: 15px 15px 0 0;
-  padding: 15px 24px 10px;
+  padding: 15px 25px 10px;
 }
 
 .search-form-inner {
-  background-color: yellow;
   display: flex;
   flex-flow: row nowrap;
 }
 
 .form-group {
-  background-color: pink;
   flex-grow: 1;
   display: flex;
   flex-flow: row nowrap;
@@ -565,8 +563,8 @@ body {
 }
 
 .form-group-label {
-  background-color: lime;
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  flex-shrink: 0;
   margin-right: 10px;
 }
 
@@ -576,12 +574,14 @@ body {
   height: 24px;
   padding: 1px 1px 1px 5px;
   flex-grow: 1;
-  /* min-width: 0;
-  max-width: 100%; */
+  min-width: 0;
+  width: 100%;
+  font-size: 13px;
 }
 
 .search-button {
-  white-space: nowrap;
+  /* white-space: nowrap; */
+  flex-shrink: 0;
   background-color: #000;
   color: #fff;
   height: 24px;
