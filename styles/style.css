@@ -494,7 +494,7 @@ body {
 }
 
 .term-title {
-  font-size: 15px;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -507,19 +507,19 @@ body {
   display: flow-root;
 }
 
-.term-list-subject,
-.term-list-brief {
-  float: right;
-  width: 145px;
-}
-
 .term-list-subject {
   color: #296897;
   font-weight: 500;
 }
 
-.term-list-thumnail {
+.term-list-thumbnail {
   float: left;
+}
+
+.term-list-subject,
+.term-list-brief {
+  float: right;
+  width: 145px;
 }
 
 .term-list-thumnail img {
@@ -537,7 +537,7 @@ body {
   float: left;
 }
 
-.cross .term-list-thumnail {
+.cross .term-list-thumbnail {
   float: right;
 }
 
@@ -636,6 +636,7 @@ body {
   flex-grow: 1;
   white-space: nowrap;
   overflow: hidden;
+  /* 공간 넘어서는 문장 ...로 보이게 */
   text-overflow: ellipsis;
 }
 
@@ -730,7 +731,6 @@ body {
 }
 
 .event-button-wrapper {
-  background-color: yellow;
   height: 18px;
   overflow: hidden;
   display: flex;
@@ -780,10 +780,30 @@ body {
   border: 1px solid #aaa;
   border-radius: 5px;
   margin-top: 10px;
+  height: 27px;
+  overflow: hidden;
+  transition: height 500ms, padding 500ms 500ms;
+}
+
+.related-list li {
+  height: 25px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 0 5px;
+  transform: none;
+}
+
+.related-list a {
+  flex-grow: 1;
+  padding: 0 10px;
 }
 
 .related-list:hover,
 .related-list:focus {
+  height: 147px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* 슬로건 */
