@@ -720,11 +720,56 @@ body {
 
 /* 신규 이벤트 및 관련 사이트 */
 
-.gradient-effect {
+.event {
+  border-bottom: 1px solid #aaa;
 }
 
-.accent-color {
-  color: #e85e2c;
+.event-button-wrapper {
+  background-color: yellow;
+  height: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 5px;
+}
+
+/* IR 기법 -> Image Replacement */
+.event-button {
+  width: 19px;
+  height: 18px;
+  border: 0;
+  padding: 18px 0 0 0;
+  background: url(./images/back_forward.png) no-repeat;
+}
+
+.event-button-next {
+  background-position: -36px 0;
+}
+
+.event-button:focus {
+  outline-offset: -2px;
+}
+
+.event-thumbnail,
+.event-brief {
+  margin: 10px 0;
+}
+
+.related-list {
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.event-thumbnail {
+}
+
+.event-brief {
+  line-height: 1.5;
+}
+
+.related {
+  margin-top: 10px;
 }
 
 /* 슬로건 */
