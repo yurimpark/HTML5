@@ -806,6 +806,10 @@ body {
   padding-bottom: 10px;
 }
 
+/* 인기 사이트 */
+.favorite-list {
+  background-color: yellow;
+}
 /* 슬로건 */
 .slogan {
   background: skyblue;
