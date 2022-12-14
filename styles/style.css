@@ -2,23 +2,27 @@
 @import url(./reset.css);
 @import url(./fontello.css);
 
-/* 주석은 ctrl+ / */
-
 /* 기본 스타일 */
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /*★★width(padding+border)+margin*/
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
 }
 
 /* 링크 스타일 */
 a {
+  color: inherit;
   text-decoration: none;
 }
 
 /* 본문 스타일 */
 body {
   color: #212121;
+  font-size: 1.4rem;
   background: #ccc;
   font-family: "Pretendard Variable", Pretendard, -apple-system,
     BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
@@ -26,125 +30,139 @@ body {
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-/* 레이아웃 selector grouping*/
+/* 레이아웃 */
 .header,
 .visual,
 .main,
 .slogan,
 .footer-inner {
   width: 940px;
-  margin: 0 auto; /*★★상자가 움직인게 아니라 투명하게 커진 것 이라고 이해하기! auto를 주면 가운데 정렬된 것 처럼 보이는데 정렬된 것이 아니라 영역을 전체로 잡아서 양 옆으로 마진이 넓어진 것.*/
+  margin: 0 auto;
 }
 
 /* 헤더 */
 .header {
   background: #fff;
   padding: 0 30px;
-  height: 15vh;
   border-radius: 0 0 15px 15px;
 }
 
 .member {
-  border-color: pink;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-}
-
-/* :before / ::before => first child */
-/* after / ::after => last child */
-/* color : red -> 상속 가능 */
-/* box-sizing : border-box -> 상속 불가능 */
-
-/** 겹침 Cascading **/
-/** 우선순위 규칙 **/
-/* li(type selector) - 1점 */
-/* .first(class selector) - 10점 */
-/* #item(id selector) - 100점 */
-
-/* .member -> 10점, li -> 1점, ::before -> 1점  => 12점  */
-/* .member li::before {
-  content: ":";
-} */
-/* .member -> 10점, .first -> 10점, ::before -> 1점  => 21점  */
-/* .member .first::before {
-  content: "첫번째 자식요소를 생성합니다.";
-} */
-/* .member li:first-child::before {
-  content: "";
-} */
-
-/* .member li:nth-child(n + 2)::before {
-  content: ":";
-  background-color: skyblue;
-} */
-
-.member li::before {
-  content: "\e800";
-  font-family: fontello;
-}
-
-.member li {
-  text-transform: capitalize;
+  background-color: pink;
 }
 
 /* 비주얼 */
 .visual {
-  background: orange;
-  height: 10vh;
+  height: 120px;
 }
-
 /* 메인 */
 .main {
-  background: lightgreen;
-  border-top: 1px solid red;
-  /* min-height: 450px; */
-  position: absolute;
+  background: #fff;
+  min-height: 450px;
+  display: flow-root;
+  padding: 30px 15px;
 }
-
-/* .main::after {
-  content: "";
-  clear: both;
-  display: block;
-} */
 
 .group {
-  height: 100px;
+  float: left;
+  margin: 0 15px;
 }
+
 .group1 {
-  background-color: violet;
   width: 250px;
-  float: right;
 }
 
 .group2 {
-  background-color: salmon;
   width: 380px;
-  float: right;
 }
 .group3 {
-  background-color: gold;
   width: 190px;
-  float: right;
+}
+
+/* 신규 이벤트 및 관련 사이트 */
+.gradient-effect {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+}
+
+.text-xl {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.accent-color {
+  color: #a52a2a;
+}
+
+.event {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #aaa;
+}
+
+.event-title {
+}
+
+.margin-top-default {
+  margin-top: 20px;
+}
+
+.event-button-wrapper {
+  overflow: hidden;
+  /* padding 트릭 */
+  /* height: 20px;
+  display: flex;
+  align-items: center; */
+  /* text-indent 트릭 tab키로 접근할 때 상자 영역 넓히기 */
+  /* padding: 2px; */
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.event-button {
+  width: 19px;
+  border: 0;
+  height: 18px;
+  /* padding 트릭 */
+  /* padding: 18px 0 0 0; */
+
+  /* text-indent 트릭 */
+  padding: 0;
+  text-indent: -9999px;
+  background: aqua url(./images/back_forward.png) no-repeat;
+}
+
+.event-button-next {
+  background-position: 100% 0;
+}
+
+.event-thumbnail,
+.event-brief {
+  margin: 10px 0;
+}
+
+.event-thumbnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #ccc;
+}
+
+.related {
+  margin-top: 10px;
 }
 
 /* 슬로건 */
 .slogan {
   background: skyblue;
-  height: 10vh;
   clear: both;
 }
 /* 푸터 */
 .footer {
   background: gray;
-  width: 940px;
-  margin: 0 auto;
 }
-
 .footer-inner {
   background: silver;
-  height: 15vh;
-  position: relative;
-  top: -10px;
-  left: -10px;
 }
